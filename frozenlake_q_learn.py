@@ -13,7 +13,11 @@ import random
 
 from utils import one_hot_encode
 
-env = gym.make('FrozenLake-v1', desc=None, map_name="8x8", is_slippery=False) # render_mode="human"
+map_name = "8x8"
+is_slippery = True
+name = 'FrozenLake-v1'
+
+env = gym.make(name, desc=None, map_name=map_name, is_slippery=is_slippery) # render_mode="human"
 
 # Obs and action spaces: 
 obs_space = env.observation_space
@@ -22,7 +26,7 @@ print(f"Observation spaces: {obs_space}")
 print(f"Action spaces: {act_space}")
 
 
-# Parameters
+# Params
 max_episodes = 20000
 max_moves = 250
 
@@ -58,6 +62,7 @@ class QNetwork(nn.Module):
     
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(device)
+
 q_network = QNetwork().to(device)
 
 # Optimizer
@@ -131,9 +136,10 @@ for episode in range(max_episodes):
     continue
 
 env.close()
+plt.savefig(f"{name}_{map_name}_slippery_graph_NN.png")
 plt.ioff()
 plt.show()
-torch.save(q_network.state_dict(), 'q_network_NN_frozenlake_8x8.pth')
+torch.save(q_network.state_dict(), f'q_table_{name}_{map_name}_slippery.pth')
 
 # to load the model: 
 # q_network = QNetwork()
