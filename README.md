@@ -13,6 +13,7 @@ Both implementations explore the agent's learning in environments with and witho
 - Saves the trained model to `q_table_FrozenLake-v1_8x8_slippery.pth`.
 - Generates a graph of cumulative rewards.
 
+# SLIPPERY SURFACE:
 ![FrozenLake-v1_8x8_slippery](./FrozenLake-v1_8x8_slippery_graph_NN.png)
 ![Gameplay](./FrozenLake-v1_8x8_slippery.gif)
 
@@ -22,7 +23,8 @@ Both implementations explore the agent's learning in environments with and witho
 - Saves the Q-table to `q_table_FrozenLake-v1_4x4_not_slippery.npy`.
 - Generates a graph of cumulative rewards.
 
-![FrozenLake-v1_8x8_not_slippery](./FrozenLake-v1_4x4_not_slippery_graph_q-table.png)
+# NON-SLIPPERY SURFACE:
+![FrozenLake-v1_4x4_not_slippery](./FrozenLake-v1_4x4_not_slippery_graph_q-table.png)
 ![Gameplay](./FrozenLake-v1_4x4_non_slipper.gif)
 
 
